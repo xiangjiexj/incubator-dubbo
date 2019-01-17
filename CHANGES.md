@@ -9,11 +9,11 @@ Please check [here](https://github.com/apache/incubator-dubbo/blob/2.7.0-release
 ### New Features
 
 - Enhancement of service governance rules.
-  - Enriched Routing Rules
-    1. Conditional Routing. support both application-level and service-level
+  - Enriched Routing Rules.
+    1. Conditional Routing. Supports both application-level and service-level conditions.
     2. Tag Routing. Newly introduced to better support traffic isolation, such as grey deployment.
-  - Decoupling governance rules with registry, making it easier to extend. Apollo and Zookeeper is available in this version. Nacos support is on the way...
-  - Application-level Dynamic Configuration support
+  - Decoupling governance rules with the registry, making it easier to extend. Apollo and Zookeeper are available in this version. Nacos support is on the way...
+  - Application-level Dynamic Configuration support.
   - Use YAML as the configuration language, which is more friendly to read and use.
 
 - Externalized Configuration. Supports reading `dubbo.properties` hosted in remote centralized configuration center - centralized configuration.
@@ -23,30 +23,30 @@ Please check [here](https://github.com/apache/incubator-dubbo/blob/2.7.0-release
 - Metadata Center. A totally new concept since 2.7.0,  used to store service metadata including static configuration, service definition, method signature, etc.. By default, Zookeeper and Redis are supported as the backend storage. Will work as the basis of service testing, mock and other service governance features going to be supported in OPS.
 
 - Asynchronous Programming Model (only works for Dubbo protocol now)
-  - Builtin support for method with CompletableFuture<T> signature.
-  - Server-side asynchronous upport, with an AsyncContext api works like Servetlet 3.0.
-  - Asynchronous filter chain callback
+  - Built-in support for the method with CompletableFuture<T> signature.
+  - Server-side asynchronous support, with an AsyncContext API works like Servlet 3.0.
+  - Asynchronous filter chain callback.
 
-- Serialization Extension: Protobuf
+- Serialization Extension: Protobuf.
 
-- Caching Policy Extension: ExpiringCache
+- Caching Policy Extension: Expiring Cache.
 
 ### Enhancements / Bugfixes
 
 - Load Balancing strategy enhancement: ConsitentHash #2190, LeastActive #2171, Random #2597, RoundRobin #2650.
 
-- Third-party dependency upgrading
-  - Switch default remoting to Netty 4
-  - Switch default Zookeeper client to Curator
-  - Upgrade Jetty to 9.x
+- Third-party dependency upgrading.
+  - Switch default remoting to Netty 4.
+  - Switch default Zookeeper client to Curator.
+  - Upgrade Jetty to 9.x.
 
-- IPV6 support #2079
+- IPV6 support #2079.
 
-- Performance tuning, check waiting request on closed channel, make them return directly #2185
+- Performance tuning, check hanging requests on a closed channel, make them return directly #2185.
 
-- Fixed the serialization problem of Jdk primitive types in kryo #2178
+- Fixed the serialization problem of JDK primitive types in Kryo #2178.
 
-- Fixed the problem of failing to notify Consumer as early as possible after the Provider side deserialization failed #1903
+- Fixed the problem of failing to notify Consumer as early as possible after the Provider side deserialization failed #1903.
 
 ### Upgrading and Compatibility Notifications
 
