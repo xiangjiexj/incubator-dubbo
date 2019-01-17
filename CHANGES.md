@@ -2,9 +2,9 @@
 
 ## 2.7.0
 
-Ruirements: **Java 8+** required
+Requirements: **Java 8+** required
 
-Please check [here]() for notes and possible compatibility issues for upgrading from 2.6.x or lower to 2.7.0.
+Please check [here](https://github.com/apache/incubator-dubbo/blob/2.7.0-release/CHANGES.md#upgrading-and-compatibility-notifications) for notes and possible compatibility issues for upgrading from 2.6.x or lower to 2.7.0.
 
 ### New Features
 
@@ -20,11 +20,11 @@ Please check [here]() for notes and possible compatibility issues for upgrading 
 
 - Simplified registry URL. With lower Registry memory use and less notification pressure from Service Directory, separates Configuration notification from Service Discovery.
 
-- Metadata Center. A totally new concept since 2.7.0,  used to store service metadata including static configuration, service definition, method signature, etc.. By default, Zookeeper and Redis are supported as the backend storage. Will workd as the basis of service testing, mock and other service governance features going to .
+- Metadata Center. A totally new concept since 2.7.0,  used to store service metadata including static configuration, service definition, method signature, etc.. By default, Zookeeper and Redis are supported as the backend storage. Will work as the basis of service testing, mock and other service governance features going to be supported in OPS.
 
 - Asynchronous Programming Model (only works for Dubbo protocol now)
   - Builtin support for method with CompletableFuture<T> signature.
-  - Server-side asynchronous upport, something works like Servetlet 3.0.
+  - Server-side asynchronous upport, with an AsyncContext api works like Servetlet 3.0.
   - Asynchronous filter chain callback
 
 - Serialization Extension: Protobuf
@@ -44,13 +44,13 @@ Please check [here]() for notes and possible compatibility issues for upgrading 
 
 - Performance tuning, check waiting request on closed channel, make them return directly #2185
 
-- Fix the serialization problem of Jdk primitive types in kryo #2178
+- Fixed the serialization problem of Jdk primitive types in kryo #2178
 
 - Fixed the problem of failing to notify Consumer as early as possible after the Provider side deserialization failed #1903
 
 ### Upgrading and Compatibility Notifications
 
-We have always keep compatibility in mind during the whole process of 2.7.0. We even want old users to upgrade with only on pom version upgrade, but it's hard to achieve that, especially when considering that we have the package renamed in this version, so we had some tradeoffs. If you only used the Dubbo's most basic features, you may have little problems of upgrading, but if you have used some advanced features or have some SPI extensions inside, you'd better read the upgrade notifications carefully. The compatibility issues can be classified into the following 5 catetories, for each part, there will have detailed dos and don'ts published later in the official website.
+We have always keep compatibility in mind during the whole process of 2.7.0. We even want old users to upgrade with only on pom version upgrade, but it's hard to achieve that, especially when considering that we have the package renamed in this version, so we had some tradeoffs. If you only used the Dubbo's most basic features, you may have little problems of upgrading, but if you have used some advanced features or have some SPI extensions inside, you'd better read the upgrade notifications carefully. The compatibility issues can be classified into the following 5 categories, for each part, there will have detailed dos and don'ts published later in the official website.
 
 1. Interoperability between 2.7.0 and lower versions
 
